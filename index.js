@@ -16,8 +16,9 @@ app.set("view engine","ejs")
 app.set(express.static(path.join(__dirname,"public")))
 
 app.get('/', function(req,res){
-    res.send("Ola!")
+    res.send("oi")
 })
+
 
 
 app.listen(3000,function(){
