@@ -25,7 +25,9 @@ app.get('/usuarios', function(req,res){
         {nome:"Andressa", email:"andressa426@gmail.com"}
     ]})
 })
-
+app.post('/add',function(req,res){
+    console.log('blablabla')
+})
 
 
 
