@@ -25,8 +25,15 @@ app.get('/usuarios', function(req,res){
         {nome:"Andressa", email:"andressa426@gmail.com"}
     ]})
 })
+
+app.get('/add',function(req,res){
+    res.render("adiciona.ejs")
+})
+
+
+
 app.post('/add',function(req,res){
-    console.log('blablabla')
+    console.log("Nome: " + req.body.txtNome + " Email: " + req.body.txtEmail)
 })
 
 
