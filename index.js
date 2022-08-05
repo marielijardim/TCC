@@ -17,13 +17,20 @@ app.set("view engine","ejs")
 app.use(express.static(path.join(__dirname,"public")))
 
 app.get('/', function(req,res){
-    res.render('index.ejs', {})
+    Usuario.find({}).exec(function(err,docs ){
+        res.render('index.ejs', {Usuarios:docs})
+    })
+   
 })
 
 
 
 app.get('/add',function(req,res){
     res.render("adiciona.ejs")
+})
+
+app.get('/site',function(req,res){
+    res.render("index.ejs",{})
 })
 
 
@@ -50,5 +57,5 @@ app.post('/add',function(req,res){
 
 
 app.listen(3000,function(){
-    console.log("Conexão inicializada ")
+    console.log("Conexão inicializada")
 })
