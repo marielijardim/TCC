@@ -29,6 +29,10 @@ app.get('/add',function(req,res){
     res.render("adiciona.ejs")
 })
 
+app.get('/menu',function(req,res){
+    res.render("tela2.ejs")
+})
+
 app.get('/site',function(req,res){
     res.render("index.ejs",{})
 })
