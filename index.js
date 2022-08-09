@@ -29,29 +29,6 @@ app.get('/add',function(req,res){
     res.render("adiciona.ejs")
 })
 
-app.get('/menu',function(req,res){
-    res.render("tela2.ejs")
-})
-
-app.get('/404',function(req,res){
-    res.render("404.ejs")
-})
-
-app.get('/blank',function(req,res){
-    res.render("blank.ejs")
-})
-
-app.get('/cards',function(req,res){
-    res.render("cards.ejs")
-})
-
-app.get('/charts',function(req,res){
-    res.render("charts.ejs")
-})
-
-app.get('/forgot',function(req,res){
-    res.render("forgot-password.ejs")
-})
 
 
 app.get('/site',function(req,res){
