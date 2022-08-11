@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matriculas</title>
+</head>
+<body>
+    <h1>Lista de Matriculas</h1>
+    
+    <style>
+        table,td,th{
+            border: 1px solid black;
+
+        }
+        th{
+            font-weight: bolder;
+    }
+    td,th{
+        padding: 5px;
+    }
+    </style>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Foto</th>
+        </tr>
+        <%for(matricula of Matriculas){%>
+
+        <tr>
+            <td><%=matricula._id%></td>
+            <td><%=matricula.nome%></td>
+            <td><%=matricula.email%></td>
+            <td><%=matricula.foto%></td>
+        </tr>
+        <% } %>
+    </table>
+</body>
+</html>
