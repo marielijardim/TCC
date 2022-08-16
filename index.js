@@ -25,49 +25,85 @@ app.get('/login',function(req,res){
 })
 //rota que faz o login
 app.post('/menu',function(req,res){
-    res.redirect('./tela2.ejs')
+    res.redirect('menu')
 })
 
 app.get('/menu',function(req,res){
     res.render('tela2.ejs')
 })
 
-//rota que abre a tela de adicionar escola
-app.get('/adicionarescola',function(req,res){
-    res.render('escola/adiciona.ejs')
+
+//rota que abre a tela de adicionar aluno
+app.get('/adicionarmatricula',function(req,res){
+    res.render('matricula/adiciona.ejs')
 })
-//rota que adiciona a escola no banco de dados
-app.post('/adicionarescola',function(req,res){
+//rota que adiciona o aluno no banco de dados
+app.post('/adicionarmatricula',function(req,res){
     //recebe os dados do formulario
-    //cria e adiciona os dados no modelo
-    res.redirect('/listarescola')
+     var matricula = new Matricula({
+        nome: req.body.txtNome,
+        data: req.body.txtData,
+        nomeResponsavel: req.body.txtNomeResponsavel,
+        endereco: req.body.txtEndereco,
+        email: req.body.txtEmail,
+        foto: req.body.txtFoto
+
+     })
+     matricula.save(function(err){
+        if(err){
+          console.log(err)
+        }else{
+         //cria e adiciona os dados no modelo
+         res.redirect('/editarmatricula');
+        }
+     })
+    
 })
-//rota que abre a tela de editar escola
-app.get('/editarescola/:id',function(req,res){
-    //buscar os dados da escola que queremos editar
-    res.render('escola/edt.ejs')
+//rota que abre a tela de editar matricula
+app.get('/editarmatricula/:id',function(req,res){
+    //buscar os dados da matricula que queremos editar
+    res.render('matricular/edt.ejs')
 })
 //rota que edita a escola no banco de dados
-app.post('/editarescola/:id',function(req,res){
+app.post('/editarmatricula/:id',function(req,res){
     //recebe os dados do formulario
+    var matricula = new Matricula({
+        nome: req.body.txtNome,
+        data: req.body.txtData,
+        nomeResponsavel: req.body.txtNomeResponsavel,
+        endereco: req.body.txtEndereco,
+        email: req.body.txtEmail,
+        foto: req.body.txtFoto
+
+     })
+     matricula.save(function(err){
+        if(err){
+          console.log(err)
+        }else{
     //busca a escola que quer editar e edita os dados no modelo
-    res.redirect('/listarescola')
+    res.redirect('/listarmatricula')
+        }
 })
-//rota que abre a tela de listar todas as escola
-app.get('/listarescola',function(req,res){
-    //buscar todas as escolas que existem
-    res.render('escola/lst.ejs', {Escolas:escolas})
+
+})
+//rota que abre a tela de listar todas as matriculas
+app.get('/listarmatricula',function(req,res){
+    //buscar todas as matriculas que existem
+    res.render('matricula/list.ejs', {Matricula:matriculas})
 })
 //rota que lista as escolas por um filtro
-app.post('/listarescola',function(req,res){
+app.post('/listarmatricula',function(req,res){
     //buscar as escolas com filtro
-    res.render('escola/lst.ejs', {Escolas:escolas})
+    res.render('matricula/list.ejs', {Matricula:matriculas})
 })
-//rota para deletar uma escola
-app.get('/deletarescola/:id',function(req,res){
-    //buscar todas as escolas que existem
-    res.redirect('/listarescola')
+//rota para deletar uma matricula
+app.get('/deletarmatricula/:id',function(req,res){
+    //buscar todas as matriculas que existem
+    res.redirect('/listarmatricula')
 })
+
+
+
 
 app.listen(3000,function(){
     console.log("Conexão inicializada")
