@@ -60,9 +60,9 @@ app.post('/adicionarmatricula',function(req,res){
     
 })
 //rota que abre a tela de editar matricula
-app.get('/editarmatricula/:id',function(req,res){
+app.get('/editarmatricula',function(req,res){
     //buscar os dados da matricula que queremos editar
-    res.render('matricular/edt.ejs')
+    res.render('matricula/edt.ejs')
 })
 //rota que edita a escola no banco de dados
 app.post('/editarmatricula/:id',function(req,res){

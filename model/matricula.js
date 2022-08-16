@@ -2,7 +2,7 @@ var conexao = require('../config/conexao')
 
 var MatriculaSchema = conexao.Schema({
     nome:{type:String},
-    data:{type:Number},
+    data:{type:String},
     nomeResponsavel:{type:String},
     endereco:{type:String},
     email:{type:String},
