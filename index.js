@@ -43,8 +43,20 @@ app.post('/adicionarmatricula',function(req,res){
      var matricula = new Matricula({
         nome: req.body.txtNome,
         data: req.body.txtData,
+        anoLetivo: req.body.txtAno,
+        especificidade: req.body.txtEspecificidade,
+        especificar: req.body.txtEspecificar,
         nomeResponsavel: req.body.txtNomeResponsavel,
         endereco: req.body.txtEndereco,
+        zona: req.body.txtZona,
+        telefones: req.body.txtTelefone,
+        situacao: req.body.txtSituacao,
+        escolasPreferencia: req.body.txtEscolas,
+        turnoPreferencia: req.body.txtTurno,
+        atendimentosClinicos: req.body.txtAtendimentos,
+        turnosAtendimentos: req.body.txtTurnos,
+        informacoesInportante: req.body.txtInformacoes,
+        necessitaraCuidador: req.body.txtNecessitara,
         email: req.body.txtEmail,
         foto: req.body.txtFoto
 
@@ -70,11 +82,22 @@ app.post('/editarmatricula/:id',function(req,res){
     var matricula = new Matricula({
         nome: req.body.txtNome,
         data: req.body.txtData,
+        anoLetivo: req.body.txtAno,
+        especificidade: req.body.txtEspecificidade,
+        especificar: req.body.txtEspecificar,
         nomeResponsavel: req.body.txtNomeResponsavel,
         endereco: req.body.txtEndereco,
+        zona: req.body.txtZona,
+        telefones: req.body.txtTelefone,
+        situacao: req.body.txtSituacao,
+        escolasPreferencia: req.body.txtEscolas,
+        turnoPreferencia: req.body.txtTurno,
+        atendimentosClinicos: req.body.txtAtendimentos,
+        turnosAtendimentos: req.body.txtTurnos,
+        informacoesInportante: req.body.txtInformacoes,
+        necessitaraCuidador: req.body.txtNecessitara,
         email: req.body.txtEmail,
         foto: req.body.txtFoto
-
      })
      matricula.save(function(err){
         if(err){
