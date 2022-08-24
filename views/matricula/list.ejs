@@ -18,7 +18,8 @@
             font-weight: bolder;
     }
     td,th{
-        padding: 5px;
+        padding: 6px;
+        
     }
     </style>
 
@@ -27,20 +28,20 @@
             <th>ID</th>
             <th>Nome</th>
             <th>Data</th>
-            <tr>AnoLetivo</tr>
-            <tr>Especificidade</tr>
-            <tr>Especificar</tr>
+            <th>AnoLetivo</th>
+            <th>Especificidade</th>
             <th>NomeResponsavel</th>
-            <tr>Endereco</tr>
-            <tr>Zona</tr>
-            <tr>Telefones</tr>
-            <tr>Situacao</tr>
-            <tr>EscolasPreferencia</tr>
-            <tr>TurnoPreferecia</tr>
-            <tr>AtendimentosClinicos</tr>
-            <tr>TurnosAtendimentos</tr>
-            <tr>InformacoesInportantes</tr>
-            <tr>NecessitaraCuidador</tr>
+            <th>Endereco</th>
+            <th>Zona</th>
+            <th>Telefones</th>
+            <th>Situacao</th>
+            <th>EscolasPreferencia</th>
+            <th>TurnoPreferecia</th>
+            <th>AtendimentosClinicos</th>
+            <th>TurnosAtendimentos</th>
+            <th>InformacoesInportantes</th>
+            <th>NecessitaraCuidador</th>
+            <th>Deletar</th>
            
             
         </tr>
@@ -52,9 +53,9 @@
             <td><%=matricula.data%></td>
             <td><%=matricula.anoLetivo%></td>
             <td><%=matricula.especificidade%></td>
-            <td><%=matricula.especificar%></td>
             <td><%=matricula.nomeResponsavel%></td>
             <td><%=matricula.endereco%></td>
+            <td><%=matricula.zona%></td>
             <td><%=matricula.telefones%></td>
             <td><%=matricula.situacao%></td>
             <td><%=matricula.escolasPreferencia%></td>
@@ -63,6 +64,10 @@
             <td><%=matricula.turnosAtendimentos%></td>
             <td><%=matricula.informacoesInportantes%></td>
             <td><%=matricula.necessitaraCuidador%></td>
+            <td>
+                <a href="/deletarmatricula/<%=matricula._id%>">Deletar</a>
+                <a href="/editarmatricula">Editar</a>
+            </td>
             
             
         </tr>

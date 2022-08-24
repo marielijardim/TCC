@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Matricular</title>
 </head>
 <body>
     <form method="POST">
         Nome Completo do(a) Aluno(a): <input type="text" name="txtNome" placeholder="Nome"><br>
       <br>  Data de Nascimento: <input type="date" name="txtData" placeholder="Data"><br>
       <p>
-      <br> Ano Letivo em 2022: <select >
+      <br> Ano Letivo em 2022: <select name="txtAno">
         <option ridden >Selecione</option>
         <option >Berçário 1</option>
         <option >Berçário 2</option>
@@ -24,30 +24,34 @@
 
       </select></p><br>
       <p>
-      <br> Especificidade: <select >
+      <br> Especificidade: <select name="txtEspecificidade" >
         <option ridden >Selecione</option>
         <option >Deficiência Visual</option>
         <option >Deficiência motora</option>
         <option >Deficiência Auditiva</option>
         <option >Paralisia Cerebral</option>
+        <option >Outro</option>
         </select> 
       </p> <br>
-      <br> Especificar no Caso de Outros: <input type="text" name="txtEspecificar" placeholder="Especificar"><br>
+    
     <br> Nome do Responsável: <input type="text" name="txtNomeResponsavel" placeholder="Nome do Responsável"><br>
       <br> Endereço do(a) Aluno(a): <input type="text" name="txtEndereco" placeholder="Endereço"><br>
       <p>
-      <br> Zona: <select >
+      <br> Zona: <select name="txtZona" >
         <option ridden >Selecione</option>
         <option >Zona Leste</option>
         <option >Zona Sul</option>
         <option >Zona Oeste</option>
         <option >Zona Norte</option>
         </select> 
-      </p> <br> 
+      </p> <br>
+
       <br> Telefones para Contato: <input type="number" name="txtTelefone" placeholder="Telefones"><br>
+
       <br> Situação: <input type="text" name="txtSituacao" placeholder="Situação"><br>
+
       <p>
-      <br> Escolas de Preferência:  <select >
+      <br> Escolas de Preferência:  <select name="txtEscolas" >
         <option ridden >Selecione</option>
         <option >EMEF Fundação Bidart</option>
         <option >EMEI Dr Penna</option>
@@ -55,7 +59,7 @@
         </select> 
       </p> <br> 
       <p>
-      <br> Turno de Preferência da Escola: <select >
+      <br> Turno de Preferência da Escola: <select name="txtTurno">
         <option ridden >Selecione</option>
         <option >Manhã</option>
         <option >Tarde</option>
@@ -63,7 +67,7 @@
       </p> <br>
       <br> Atendimentos Clínicos Especializados que Frequenta Atualmente : <input type="text" name="txtAtendimentos" placeholder="Atendimetos Clínicos"><br>
       <p>
-      <br> Turnos dos Atendimentos Clínicos: <select >
+      <br> Turnos dos Atendimentos Clínicos: <select name="txtTurnos">
         <option ridden >Selecione</option>
         <option >Manhã</option>
         <option >Tarde</option>
@@ -71,7 +75,7 @@
       </p> <br>
       <br> Informações Importantes Sobre o(a) Aluno(a): <input type="text" name="txtInfomacoes" placeholder="Informações Importantes"><br>
       <p>
-      <br> O(a) Aluno(a) Necessitará de um Cuidador: <select >
+      <br> O(a) Aluno(a) Necessitará de um Cuidador: <select name="txtNecessitara">
         <option ridden >Selecione</option>
         <option >Sim</option>
         <option >Não</option>
