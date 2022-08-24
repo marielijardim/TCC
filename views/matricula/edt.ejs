@@ -8,8 +8,9 @@
 </head>
 <body>
     <form method="POST">
-        Nome Completo do(a) Aluno(a): <input type="text" name="txtNome" placeholder="Nome"><br>
-      <br>  Data de Nascimento: <input type="date" name="txtData" placeholder="Data"><br>
+        Id: <input type="text" name="txtId" readonly value="<%=matricula._id%>"><br>
+        Nome Completo do(a) Aluno(a): <input type="text" name="txtNome" placeholder="Nome" value="<%=matricula.nome%>"><br>
+      <br>  Data de Nascimento: <input type="date" name="txtData" placeholder="Data" value="<%=matricula.data%>"><br>
       <p>
       <br> Ano Letivo em 2022: <select name="txtAno">
         <option ridden >Selecione</option>
@@ -34,8 +35,8 @@
         </select> 
       </p> <br>
     
-    <br> Nome do Responsável: <input type="text" name="txtNomeResponsavel" placeholder="Nome do Responsável"><br>
-      <br> Endereço do(a) Aluno(a): <input type="text" name="txtEndereco" placeholder="Endereço"><br>
+    <br> Nome do Responsável: <input type="text" name="txtNomeResponsavel" placeholder="Nome do Responsável" value="<%=matricula.nomeResponsavel%>"><br>
+      <br> Endereço do(a) Aluno(a): <input type="text" name="txtEndereco" placeholder="Endereço" value="<%=matricula.endereco%>"><br>
       <p>
       <br> Zona: <select name="txtZona" >
         <option ridden >Selecione</option>
@@ -46,12 +47,12 @@
         </select> 
       </p> <br>
 
-      <br> Telefones para Contato: <input type="number" name="txtTelefone" placeholder="Telefones"><br>
+      <br> Telefones para Contato: <input type="text" name="txtTelefone" placeholder="Telefones" value="<%=matricula.telefones%>"><br>
 
-      <br> Situação: <input type="text" name="txtSituacao" placeholder="Situação"><br>
+      <br> Situação: <input type="text" name="txtSituacao" placeholder="Situação" value="<%=matricula.situacao%>"><br>
 
       <p>
-      <br> Escolas de Preferência:  <select name="txtEscolas" >
+      <br> Escolas de Preferência:  <select name="txtEscolas">
         <option ridden >Selecione</option>
         <option >EMEF Fundação Bidart</option>
         <option >EMEI Dr Penna</option>
@@ -65,7 +66,7 @@
         <option >Tarde</option>
         </select>
       </p> <br>
-      <br> Atendimentos Clínicos Especializados que Frequenta Atualmente : <input type="text" name="txtAtendimentos" placeholder="Atendimetos Clínicos"><br>
+      <br> Atendimentos Clínicos Especializados que Frequenta Atualmente : <input type="text" name="txtAtendimentos" placeholder="Atendimetos Clínicos" value="<%=matricula.atendimentosClinicos%>"><br>
       <p>
       <br> Turnos dos Atendimentos Clínicos: <select name="txtTurnos">
         <option ridden >Selecione</option>
@@ -73,7 +74,7 @@
         <option >Tarde</option>
         </select>
       </p> <br>
-      <br> Informações Importantes Sobre o(a) Aluno(a): <input type="text" name="txtInfomacoes" placeholder="Informações Importantes"><br>
+      <br> Informações Importantes Sobre o(a) Aluno(a): <input type="text" name="txtInfomacoes" placeholder="Informações Importantes" value="<%=matricula.informacoesInportantes%>"><br>
       <p>
       <br> O(a) Aluno(a) Necessitará de um Cuidador: <select name="txtNecessitara">
         <option ridden >Selecione</option>

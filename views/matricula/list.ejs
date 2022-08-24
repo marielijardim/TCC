@@ -42,6 +42,7 @@
             <th>InformacoesInportantes</th>
             <th>NecessitaraCuidador</th>
             <th>Deletar</th>
+            <th>Editar</th>
            
             
         </tr>
@@ -66,7 +67,10 @@
             <td><%=matricula.necessitaraCuidador%></td>
             <td>
                 <a href="/deletarmatricula/<%=matricula._id%>">Deletar</a>
-                <a href="/editarmatricula">Editar</a>
+
+            </td>
+            <td>
+                <a href="/editarmatricula/<%=matricula._id%>">Editar</a>
             </td>
             
             

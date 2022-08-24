@@ -94,19 +94,27 @@ app.get('/deletarmatricula/:id',function(req,res){
             res.redirect('/listarmatricula')
           }
     })
-    console.log(req.params.id)
+    
     
 })
 
 //rota que abre a tela de editar matricula
-app.get('/editarmatricula',function(req,res){
+app.get('/editarmatricula/:id',function(req,res){
     //buscar os dados da matricula que queremos editar
-    res.render('matricula/edt.ejs')
+    Matricula.findById(req.params.id,function(err,docs){
+        if(err){
+          console.log(err)
+        }else{
+        res.render('matricula/edt.ejs',{Matricula: docs})
+        }
+    })
+    
 })
 //rota que edita a escola no banco de dados
 app.post('/editarmatricula/:id',function(req,res){
     //recebe os dados do formulario
-    var matricula = new Matricula({
+    Matricula.findByIdAndUpdate(req.params.id,
+    {
         id: req.body.txtId,
         nome: req.body.txtNome,
         data: req.body.txtData,
@@ -124,17 +132,13 @@ app.post('/editarmatricula/:id',function(req,res){
         informacoesInportante: req.body.txtInformacoes,
         necessitaraCuidador: req.body.txtNecessitara
     
-     })
-     matricula.save(function(err){
-        if(err){
-          console.log(err)
-        }else{
-    //busca a escola que quer editar e edita os dados no modelo
-    res.redirect('/listarmatricula')
-        }
+     },function(err,docs){
+        //busca a escola que quer editar e edita os dados no modelo
+        res.redirect('/listarmatricula')
+    })
+     
 })
 
-})
 
 
 app.listen(3000,function(){
