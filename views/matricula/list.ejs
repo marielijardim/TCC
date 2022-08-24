@@ -27,9 +27,22 @@
             <th>ID</th>
             <th>Nome</th>
             <th>Data</th>
-            <th>NomeResponsavel/th>
-            <th>Email</th>
-            <th>Foto</th>
+            <tr>AnoLetivo</tr>
+            <tr>Especificidade</tr>
+            <tr>Especificar</tr>
+            <th>NomeResponsavel</th>
+            <tr>Endereco</tr>
+            <tr>Zona</tr>
+            <tr>Telefones</tr>
+            <tr>Situacao</tr>
+            <tr>EscolasPreferencia</tr>
+            <tr>TurnoPreferecia</tr>
+            <tr>AtendimentosClinicos</tr>
+            <tr>TurnosAtendimentos</tr>
+            <tr>InformacoesInportantes</tr>
+            <tr>NecessitaraCuidador</tr>
+           
+            
         </tr>
         <%for(matricula of Matriculas){%>
 
@@ -37,9 +50,21 @@
             <td><%=matricula._id%></td>
             <td><%=matricula.nome%></td>
             <td><%=matricula.data%></td>
+            <td><%=matricula.anoLetivo%></td>
+            <td><%=matricula.especificidade%></td>
+            <td><%=matricula.especificar%></td>
             <td><%=matricula.nomeResponsavel%></td>
-            <td><%=matricula.email%></td>
-            <td><%=matricula.foto%></td>
+            <td><%=matricula.endereco%></td>
+            <td><%=matricula.telefones%></td>
+            <td><%=matricula.situacao%></td>
+            <td><%=matricula.escolasPreferencia%></td>
+            <td><%=matricula.turnoPreferencia%></td>
+            <td><%=matricula.atendimentosClinicos%></td>
+            <td><%=matricula.turnosAtendimentos%></td>
+            <td><%=matricula.informacoesInportantes%></td>
+            <td><%=matricula.necessitaraCuidador%></td>
+            
+            
         </tr>
         <% } %>
     </table>

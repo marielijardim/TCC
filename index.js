@@ -56,9 +56,7 @@ app.post('/adicionarmatricula',function(req,res){
         atendimentosClinicos: req.body.txtAtendimentos,
         turnosAtendimentos: req.body.txtTurnos,
         informacoesInportante: req.body.txtInformacoes,
-        necessitaraCuidador: req.body.txtNecessitara,
-        email: req.body.txtEmail,
-        foto: req.body.txtFoto
+        necessitaraCuidador: req.body.txtNecessitara
 
      })
      matricula.save(function(err){
@@ -80,6 +78,7 @@ app.get('/editarmatricula',function(req,res){
 app.post('/editarmatricula/:id',function(req,res){
     //recebe os dados do formulario
     var matricula = new Matricula({
+        id: req.body.txtId,
         nome: req.body.txtNome,
         data: req.body.txtData,
         anoLetivo: req.body.txtAno,
@@ -95,9 +94,8 @@ app.post('/editarmatricula/:id',function(req,res){
         atendimentosClinicos: req.body.txtAtendimentos,
         turnosAtendimentos: req.body.txtTurnos,
         informacoesInportante: req.body.txtInformacoes,
-        necessitaraCuidador: req.body.txtNecessitara,
-        email: req.body.txtEmail,
-        foto: req.body.txtFoto
+        necessitaraCuidador: req.body.txtNecessitara
+    
      })
      matricula.save(function(err){
         if(err){
@@ -124,9 +122,6 @@ app.get('/deletarmatricula/:id',function(req,res){
     //buscar todas as matriculas que existem
     res.redirect('/listarmatricula')
 })
-
-
-
 
 app.listen(3000,function(){
     console.log("Conexão inicializada")
