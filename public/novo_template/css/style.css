@@ -357,6 +357,8 @@ html body .vt {
 }
 html body .vm {
   vertical-align: middle;
+  width: 1px;
+  left: 2px;
 }
 html body .vb {
   vertical-align: bottom;
@@ -1276,7 +1278,7 @@ File: scss
   border-left: 1px solid rgba(120, 130, 140, 0.13);
 }
 .topbar .profile-pic img {
-  width: 30px;
+  width: 50px;
   border-radius: 100%;
 }
 .topbar .profile-pic span {
