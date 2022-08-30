@@ -22,6 +22,10 @@ app.use(express.static(path.join(__dirname,"public")))
 app.get('/login',function(req,res){
     res.render('index.ejs')
 })
+app.post('/adicionarmatricula',function(req,res){
+   
+    res.redirect('/adicionarmatricula')
+})
 
 //rota que abre a tela de adicionar aluno
 app.get('/adicionarmatricula',function(req,res){
