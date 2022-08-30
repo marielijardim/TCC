@@ -37,7 +37,7 @@ app.get('/menu',function(req,res){
 
 //rota que abre a tela de adicionar aluno
 app.get('/adicionarmatricula',function(req,res){
-    res.render('matricula/adiciona.ejs')
+    res.render('tela2.ejs')
 })
 //rota que adiciona o aluno no banco de dados
 app.post('/adicionarmatricula',function(req,res){
@@ -143,6 +143,10 @@ app.post('/editaraluno/:id',function(req,res){
 app.get('/adicionarescolas',function(req,res){
     res.render('escola/adiciona.ejs')
 })
+app.get('/add',function(req,res){
+    res.render('escola/add.ejs')
+})
+
 //rota que adiciona a escola no banco de dados
 app.post('/adicionarescolas',function(req,res){
     //recebe os dados do formulario
@@ -161,8 +165,10 @@ app.post('/adicionarescolas',function(req,res){
          res.redirect('/listarescola');
         }
      })
+     
     
 })
+
 //rota que abre a tela de listar todas as escolas
 app.get('/listarescola',function(req,res){
     Escola.find({}).exec(function(err,docs){

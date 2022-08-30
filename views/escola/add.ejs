@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -39,20 +38,6 @@
 </head>
 
 <body class="fix-header fix-sidebar card-no-border">
-    <style>
-        table,td,th{
-            border: 1px solid black;
-
-        }
-        th{
-            font-weight: bolder;
-    }
-    td,th{
-        padding: 6px;
-        
-    }
-    </style>
-
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
@@ -177,65 +162,47 @@
                 <!-- ============================================================== -->
                 <!-- Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
-                <div class="row page-titles">
-                    <div class="col-md-5 align-self-center">
-                        <h3 class="text-themecolor">Menu</h3>
-                        <div class="navbar-header">
-                            <table>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nome</th>
-                                    <th>Data</th>
-                                    <th>AnoLetivo</th>
-                                    <th>Especificidade</th>
-                                    <th>NomeResponsavel</th>
-                                    <th>Endereco</th>
-                                    <th>Zona</th>
-                                    <th>Telefones</th>
-                                    <th>Situacao</th>
-                                    <th>EscolasPreferencia</th>
-                                    <th>TurnoPreferecia</th>
-                                    <th>AtendimentosClinicos</th>
-                                    <th>TurnosAtendimentos</th>
-                                    <th>InformacoesInportantes</th>
-                                    <th>NecessitaraCuidador</th>
-                                    <th>Deletar</th>
-                                    <th>Editar</th>
-                                   
-                                    
-                                </tr>
-                                <%for(matricula of Matriculas){%>
-                                <tr>
-                                    <td><%=matricula._id%></td>
-                                    <td><%=matricula.nome%></td>
-                                    <td><%=matricula.data%></td>
-                                    <td><%=matricula.anoLetivo%></td>
-                                    <td><%=matricula.especificidade%></td>
-                                    <td><%=matricula.nomeResponsavel%></td>
-                                    <td><%=matricula.endereco%></td>
-                                    <td><%=matricula.zona%></td>
-                                    <td><%=matricula.telefones%></td>
-                                    <td><%=matricula.situacao%></td>
-                                    <td><%=matricula.escolasPreferencia%></td>
-                                    <td><%=matricula.turnoPreferencia%></td>
-                                    <td><%=matricula.atendimentosClinicos%></td>
-                                    <td><%=matricula.turnosAtendimentos%></td>
-                                    <td><%=matricula.informacoesInportantes%></td>
-                                    <td><%=matricula.necessitaraCuidador%></td>
-                                    <td>
-                                        <a href="/deletaraluno/<%=matricula._id%>">Deletar</a>
-                        
-                                    </td>
-                                    <td>
-                                        <a href="/editaraluno/<%=matricula._id%>">Editar</a>
-                                    </td>
-                                    
-                                    
-                                </tr>
-                                <% } %>
-                            </table>
-                        </div>
-                    </div>
+
+
+                    <div id="layoutSidenav_content">
+                        <main>
+                            <div class="container-fluid px-4">
+                                <h1 class="mt-4">Vagas Desponíveis</h1>
+                                <ol class="breadcrumb mb-4">
+                                    <li class="breadcrumb-item active">Selecione sua opção de emprego e agende sua entrevista</li>
+                                </ol>
+                                <div class="row">
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="./opera.jpg" alt="Imagem de capa do card">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Operador de Caixa</h5>
+                                      <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                                      <div class="text-center">
+                                        <a type="button" href="/agendamentoO" class="btn-info ">Inscrever-se</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  
+                            
+                                  <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="images/rua.png" alt="Imagem de capa do card">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Repositor </h5>
+                                      <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                                      <div class="text-center">
+                                        <a type="button" href="/agendamentoO"  class="btn-info">Inscrever-se</a>
+                                       
+                                      </div>
+                                      
+                                  </div>
+                                </div>
+                                        
+                                    </div>
+                                
+                              
+                                    </div>
+                                </div>
+                            </div>
                     
                 
     <script src="/novo_template/assets/node_modules/jquery/jquery.min.js"></script>
@@ -263,12 +230,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
