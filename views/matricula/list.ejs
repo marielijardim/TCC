@@ -146,7 +146,7 @@
                                     class="fa fa-tachometer"></i><span class="hide-menu">Matricular</span></a>
                                     
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="/add" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="/listarescolas" aria-expanded="false"><i
                                     class="fa fa-user-circle-o"></i><span class="hide-menu">Escolas</span></a>
                         </li>
                         <li> <a class="waves-effect waves-dark" href="/listaraluno" aria-expanded="false"><i
@@ -179,64 +179,68 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-themecolor">Menu</h3>
-                        <div class="navbar-header">
-                            <table>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nome</th>
-                                    <th>Data</th>
-                                    <th>AnoLetivo</th>
-                                    <th>Especificidade</th>
-                                    <th>NomeResponsavel</th>
-                                    <th>Endereco</th>
-                                    <th>Zona</th>
-                                    <th>Telefones</th>
-                                    <th>Situacao</th>
-                                    <th>EscolasPreferencia</th>
-                                    <th>TurnoPreferecia</th>
-                                    <th>AtendimentosClinicos</th>
-                                    <th>TurnosAtendimentos</th>
-                                    <th>InformacoesInportantes</th>
-                                    <th>NecessitaraCuidador</th>
-                                    <th>Deletar</th>
-                                    <th>Editar</th>
-                                   
+                        <h3 class="text-themecolor">Table Basic</h3>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                            <li class="breadcrumb-item active">Table Basic</li>
+                        </ol>
+                    </div>
+                    <div class="col-md-7 align-self-center">
+                        <a href="https://www.wrappixel.com/templates/adminwrap/" class="btn waves-effect waves-light btn btn-info pull-right hidden-sm-down text-white"> Upgrade to
+                            Pro</a>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- column -->
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Basic Table</h4>
+                                <h6 class="card-subtitle">Add class <code>.table</code></h6>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Nome</th>
+                                                <th>Especificidade</th>
+                                                <th>Deletar</th>
+                                                <th>Editar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <%for(matricula of Matriculas){%>
+                                            <tr>
+                                                <td><%=matricula._id%></td>
+                                                <td><%=matricula.nome%></td>
+                                                <td><%=matricula.especificidade%></td>
+                                                <td>
+                                                    <a href="/deletaraluno/<%=matricula._id%>">Deletar</a>
                                     
-                                </tr>
-                                <%for(matricula of Matriculas){%>
-                                <tr>
-                                    <td><%=matricula._id%></td>
-                                    <td><%=matricula.nome%></td>
-                                    <td><%=matricula.data%></td>
-                                    <td><%=matricula.anoLetivo%></td>
-                                    <td><%=matricula.especificidade%></td>
-                                    <td><%=matricula.nomeResponsavel%></td>
-                                    <td><%=matricula.endereco%></td>
-                                    <td><%=matricula.zona%></td>
-                                    <td><%=matricula.telefones%></td>
-                                    <td><%=matricula.situacao%></td>
-                                    <td><%=matricula.escolasPreferencia%></td>
-                                    <td><%=matricula.turnoPreferencia%></td>
-                                    <td><%=matricula.atendimentosClinicos%></td>
-                                    <td><%=matricula.turnosAtendimentos%></td>
-                                    <td><%=matricula.informacoesInportantes%></td>
-                                    <td><%=matricula.necessitaraCuidador%></td>
-                                    <td>
-                                        <a href="/deletaraluno/<%=matricula._id%>">Deletar</a>
-                        
-                                    </td>
-                                    <td>
-                                        <a href="/editaraluno/<%=matricula._id%>">Editar</a>
-                                    </td>
-                                    
-                                    
-                                </tr>
-                                <% } %>
-                            </table>
+                                                </td>
+                                                <td>
+                                                    <a href="/editaraluno/<%=matricula._id%>">Editar</a>
+                                                </td>
+                                            </tr>
+                                            <% } %>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
+                </div>
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+            </div>           
+                  
                 
     <script src="/novo_template/assets/node_modules/jquery/jquery.min.js"></script>
     <!-- Bootstrap popper Core JavaScript -->

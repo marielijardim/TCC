@@ -22,23 +22,14 @@ app.use(express.static(path.join(__dirname,"public")))
 app.get('/login',function(req,res){
     res.render('index.ejs')
 })
-//rota que faz o login
-app.post('/menu',function(req,res){
-    res.redirect('menu')
-})
-
-app.get('/menu',function(req,res){
-    
-        res.render('tela2.ejs')
-   
-    
-})
-
 
 //rota que abre a tela de adicionar aluno
 app.get('/adicionarmatricula',function(req,res){
-    res.render('tela2.ejs')
+    Escola.find({}).exec(function(err,docs){
+        res.render('matricula/adiciona.ejs',{Escolas:docs})
+    })
 })
+
 //rota que adiciona o aluno no banco de dados
 app.post('/adicionarmatricula',function(req,res){
     //recebe os dados do formulario
@@ -57,7 +48,8 @@ app.post('/adicionarmatricula',function(req,res){
         atendimentosClinicos: req.body.txtAtendimentos,
         turnosAtendimentos: req.body.txtTurnos,
         informacoesInportante: req.body.txtInformacoes,
-        necessitaraCuidador: req.body.txtNecessitara
+        necessitaraCuidador: req.body.txtNecessitara,
+        escola: req.body.txtEscola
 
      })
      matricula.save(function(err){
@@ -100,14 +92,15 @@ app.get('/deletaraluno/:id',function(req,res){
 //rota que abre a tela de editar matricula
 app.get('/editaraluno/:id',function(req,res){
     //buscar os dados da matricula que queremos editar
-    Matricula.findById(req.params.id,function(err,docs){
-        if(err){
-          console.log(err)
-        }else{
-        res.render('matricula/edt.ejs',{Matriculas: docs})
-        }
-    })
-    
+    Escola.find({}).exec(function(err,docs){
+        Matricula.findById(req.params.id,function(err,docs1){
+            if(err){
+            console.log(err)
+            }else{
+                res.render('matricula/edt.ejs',{matricula: docs1, Escolas:docs})
+            }
+        })
+    })   
 })
 //rota que edita a matricula no banco de dados
 app.post('/editaraluno/:id',function(req,res){
@@ -129,7 +122,8 @@ app.post('/editaraluno/:id',function(req,res){
         atendimentosClinicos: req.body.txtAtendimentos,
         turnosAtendimentos: req.body.txtTurnos,
         informacoesInportante: req.body.txtInformacoes,
-        necessitaraCuidador: req.body.txtNecessitara
+        necessitaraCuidador: req.body.txtNecessitara,
+        escola: req.body.txtEscola
     
      },function(err,docs){
         //busca as matriculas que quer editar e edita os dados no modelo
@@ -143,15 +137,13 @@ app.post('/editaraluno/:id',function(req,res){
 app.get('/adicionarescolas',function(req,res){
     res.render('escola/adiciona.ejs')
 })
-app.get('/add',function(req,res){
-    res.render('escola/add.ejs')
-})
+
 
 //rota que adiciona a escola no banco de dados
 app.post('/adicionarescolas',function(req,res){
     //recebe os dados do formulario
      var escola = new Escola({
-        nome: req.body.txtNome,
+        nome: req.body.txtEscola,
         endereco: req.body.txtEndereco,
         foto: req.body.txtFoto
         
@@ -162,7 +154,7 @@ app.post('/adicionarescolas',function(req,res){
           console.log(err)
         }else{
          //cria e adiciona os dados no modelo
-         res.redirect('/listarescola');
+         res.redirect('/listarescolas');
         }
      })
      
@@ -170,15 +162,15 @@ app.post('/adicionarescolas',function(req,res){
 })
 
 //rota que abre a tela de listar todas as escolas
-app.get('/listarescola',function(req,res){
+app.get('/listarescolas',function(req,res){
     Escola.find({}).exec(function(err,docs){
         //buscar todas as escolas que existem
-        res.render('escola/list.ejs',{Escolas:docs})
+        res.render('escola/add.ejs',{Escolas:docs})
     
     
 }) })
 //rota que lista as escolas por um filtro
-app.post('/listarescola',function(req,res){
+app.post('/listarescolas',function(req,res){
     //buscar as escolas com filtro
     res.render('escola/list.ejs', {escola:Escolas})
 })
@@ -189,7 +181,7 @@ app.get('/deletarescola/:id',function(req,res){
         if(err){
             console.log(err)
           }else{
-            res.redirect('/listarescola')
+            res.redirect('/listarescolas')
           }
     })
     
@@ -203,7 +195,7 @@ app.get('/editarescola/:id',function(req,res){
         if(err){
           console.log(err)
         }else{
-        res.render('escola/edt.ejs',{Escola: docs})
+        res.render('escola/edt.ejs',{escola: docs})
         }
     })
     
@@ -221,18 +213,17 @@ app.post('/editarescola/:id',function(req,res){
     
      },function(err,docs){
         //busca a escola que quer editar e edita os dados no modelo
-        res.redirect('/listarescola')
+        res.redirect('/listarescolas')
     })
      
 })
 
-
-app.get('/adicionar',function(req,res){
-    res.render('aluno/adiciona.ejs')
+app.get('/listaralunos/:id',function(req,res){
+    Matricula.find({escola:req.params.id}).exec(function(err,docs){
+        //buscar todas as matriculas que existem
+        res.render('matricula/list.ejs',{Matriculas:docs})   
+    })
 })
-
-
-
 
 app.listen(3000,function(){
     console.log("Conexão inicializada")

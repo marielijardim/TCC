@@ -131,7 +131,7 @@
                                     class="fa fa-tachometer"></i><span class="hide-menu">Matricular</span></a>
                                     
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="/add" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="/listarescolas" aria-expanded="false"><i
                                     class="fa fa-user-circle-o"></i><span class="hide-menu">Escolas</span></a>
                         </li>
                         <li> <a class="waves-effect waves-dark" href="/listaraluno" aria-expanded="false"><i
@@ -167,35 +167,37 @@
                     <div id="layoutSidenav_content">
                         <main>
                             <div class="container-fluid px-4">
-                                <h1 class="mt-4">Vagas Desponíveis</h1>
-                                <ol class="breadcrumb mb-4">
-                                    <li class="breadcrumb-item active">Selecione sua opção de emprego e agende sua entrevista</li>
-                                </ol>
                                 <div class="row">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="./opera.jpg" alt="Imagem de capa do card">
+                                    <div class="col-md-8">
+                                        <h1 class="mt-4">Escolas</h1>
+                                        <ol class="breadcrumb mb-4">
+                                            <li class="breadcrumb-item active">Selecione uma opção de escola para visualizar a lista de alunos matriculados </li>
+                                        </ol>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a type="button" href="/adicionarescolas" class="btn-info mt-4">Adicionar Escola</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <%for(escola of Escolas){%>
+                                    <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="/fotos/<%=escola.foto%>" alt="Imagem de capa do card">
                                     <div class="card-body">
-                                      <h5 class="card-title">Operador de Caixa</h5>
-                                      <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                                      <h5 class="card-title"><%=escola.nome%></h5>
+                                      <p class="card-text"><%=escola.endereco%></p>
                                       <div class="text-center">
-                                        <a type="button" href="/agendamentoO" class="btn-info ">Inscrever-se</a>
+                                        <a type="button" href="/listaralunos/<%=escola._id%>" class="btn-info ">Alunos</a>
+                                      
+                                        <a type="button" href="/editarescola/<%=escola._id%>" class="btn-warning ">Editar</a>
+                                      
+                                        <a type="button" href="/deletarescola/<%=escola._id%>" class="btn-danger ">Deletar</a>
                                       </div>
                                     </div>
                                   </div>
-                                  
+                                  <% } %>
                             
-                                  <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="images/rua.png" alt="Imagem de capa do card">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Repositor </h5>
-                                      <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
-                                      <div class="text-center">
-                                        <a type="button" href="/agendamentoO"  class="btn-info">Inscrever-se</a>
-                                       
-                                      </div>
-                                      
-                                  </div>
-                                </div>
+                                 
                                         
                                     </div>
                                 

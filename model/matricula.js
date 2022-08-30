@@ -17,7 +17,7 @@ var MatriculaSchema = conexao.Schema({
     turnosAtendimentos:{type:String},
     informacoesInportantes:{type:String},
     necessitaraCuidador:{type:String},
-    
+    escola:{type:conexao.Schema.Types.ObjectId, ref: "Escola"}
 })
 
 module.exports = conexao.model("Matricula",MatriculaSchema)
