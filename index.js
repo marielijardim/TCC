@@ -23,10 +23,6 @@ app.use(express.static(path.join(__dirname,"public")))
 app.get('/login',function(req,res){
     res.render('index.ejs')
 })
-app.post('/adicionarmatricula',function(req,res){
-    
-    res.redirect('/adicionarmatricula')
-})
 
 //rota que abre a tela de adicionar aluno
 app.get('/adicionarmatricula',function(req,res){
@@ -145,7 +141,7 @@ app.get('/adicionarescolas',function(req,res){
 
 
 //rota que adiciona a escola no banco de dados
-app.post('/adicionarescolas',upload.single(txtFoto),function(req,res){
+app.post('/adicionarescolas',upload.single("txtFoto"),function(req,res){
     //recebe os dados do formulario
      var escola = new Escola({
         nome: req.body.txtEscola,
@@ -206,7 +202,7 @@ app.get('/editarescola/:id',function(req,res){
     
 })
 //rota que edita a escola no banco de dados
-app.post('/editarescola/:id',upload.single(txtFoto),function(req,res){
+app.post('/editarescola/:id',upload.single("txtFoto"),function(req,res){
     //recebe os dados do formulario
     Escola.findByIdAndUpdate(req.params.id,
     {
