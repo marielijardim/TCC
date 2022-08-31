@@ -6,6 +6,7 @@ var path = require("path")
 var Escola = require("./model/escola")
 var Aluno = require("./model/aluno")
 var Matricula = require("./model/matricula")
+var upload = require("./config/configMulter")
 
 
 app.use(cookieParser())
@@ -23,7 +24,7 @@ app.get('/login',function(req,res){
     res.render('index.ejs')
 })
 app.post('/adicionarmatricula',function(req,res){
-   
+    
     res.redirect('/adicionarmatricula')
 })
 
@@ -144,12 +145,12 @@ app.get('/adicionarescolas',function(req,res){
 
 
 //rota que adiciona a escola no banco de dados
-app.post('/adicionarescolas',function(req,res){
+app.post('/adicionarescolas',upload.single(txtFoto),function(req,res){
     //recebe os dados do formulario
      var escola = new Escola({
         nome: req.body.txtEscola,
         endereco: req.body.txtEndereco,
-        foto: req.body.txtFoto
+        foto: req.file.filename
         
 
      })
@@ -205,14 +206,14 @@ app.get('/editarescola/:id',function(req,res){
     
 })
 //rota que edita a escola no banco de dados
-app.post('/editarescola/:id',function(req,res){
+app.post('/editarescola/:id',upload.single(txtFoto),function(req,res){
     //recebe os dados do formulario
     Escola.findByIdAndUpdate(req.params.id,
     {
         id: req.body.txtId,
         nome: req.body.txtNome,
         endereco: req.body.txtEndereco,
-        foto: req.body.txtFoto
+        foto: req.file.filename
        
     
      },function(err,docs){
