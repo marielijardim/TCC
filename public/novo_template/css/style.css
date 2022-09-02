@@ -489,7 +489,7 @@ Text Colors
 }
 
 .text-inverse {
-  color: #2f3d4a !important;
+  color: #2f344a !important;
 }
 
 html body .text-blue {
@@ -2345,24 +2345,24 @@ Buttons
 
 .btn-warning,
 .btn-warning.disabled {
-  background: #ff9041;
+  background: #20aee3;
   color: #ffffff;
   /*box-shadow: $warning-shadow;*/
-  border: 1px solid #ff9041;
+  border: 1px solid #20aee3;
   transition: 0.2s ease-in;
 }
 .btn-warning:hover,
 .btn-warning.disabled:hover {
-  background: #ff9041;
+  background: #20aee3;
   color: #ffffff;
   /*box-shadow: $warning-shadow-hover;*/
-  border: 1px solid #ff9041;
+  border: 1px solid #20aee3;
 }
 .btn-warning.active, .btn-warning:active, .btn-warning:focus,
 .btn-warning.disabled.active,
 .btn-warning.disabled:active,
 .btn-warning.disabled:focus {
-  background: #e9ab2e;
+  background: #20aee3;
   color: #ffffff;
   /*box-shadow: $warning-shadow-hover;*/
   border-color: transparent;
@@ -2370,22 +2370,22 @@ Buttons
 
 .btn-danger,
 .btn-danger.disabled {
-  background: #ff5c6c;
-  border: 1px solid #ff5c6c;
+  background: #20aee3;
+  border: 1px solid  #20aee3;
   /*box-shadow: $danger-shadow;*/
   transition: 0.2s ease-in;
 }
 .btn-danger:hover,
 .btn-danger.disabled:hover {
-  background: #ff5c6c;
+  background:  #20aee3;
   /*box-shadow: $danger-shadow-hover;*/
-  border: 1px solid #ff5c6c;
+  border: 1px solid #20aee3;
 }
 .btn-danger.active, .btn-danger:active, .btn-danger:focus,
 .btn-danger.disabled.active,
 .btn-danger.disabled:active,
 .btn-danger.disabled:focus {
-  background: #e6294b;
+  background: #20aee3;
   /*box-shadow: $danger-shadow-hover;*/
   border-color: transparent;
 }
@@ -2413,21 +2413,21 @@ Buttons
 
 .btn-red,
 .btn-red.disabled {
-  background: #fb3a3a;
-  border: 1px solid #fb3a3a;
+  background:#20aee3;
+  border: 1px solid #20aee3;
   color: #ffffff;
 }
 .btn-red:hover,
 .btn-red.disabled:hover {
   opacity: 0.7;
-  border: 1px solid #fb3a3a;
-  background: #fb3a3a;
+  border: 1px solid #20aee3;
+  background: #20aee3;
 }
 .btn-red.active, .btn-red:active, .btn-red:focus,
 .btn-red.disabled.active,
 .btn-red.disabled:active,
 .btn-red.disabled:focus {
-  background: #e6294b;
+  background:#20aee3;
 }
 
 .btn-outline-secondary {
