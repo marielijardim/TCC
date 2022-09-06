@@ -179,7 +179,7 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-themecolor">Alunos</h3>
+                        <h3 class="text-themecolor">Aluno</h3>
                        
                     </div>
                    
@@ -209,7 +209,6 @@
                                                 <th>Endereco</th>
                                                 <th>Zona</th>
                                                 <th>Telefones</th>
-                                                <th>Situacao</th>
                                                 <th>Turnos</th>
                                                 <th>Atendimentos</th>
                                                 <th>TurnoAtendimentos</th>
@@ -224,7 +223,18 @@
                                             <tr>
                                                 <td><%=matricula._id%></td>
                                                 <td><%=matricula.nome%></td>
+                                                <td><%=matricula.data%></td>
+                                                <td><%=matricula.ano%></td>
                                                 <td><%=matricula.especificidade%></td>
+                                                <td><%=matricula.nomeResponsavel%></td>
+                                                <td><%=matricula.endereco%></td>
+                                                <td><%=matricula.zona%></td>
+                                                <td><%=matricula.telefone%></td>
+                                                <td><%=matricula.turnos%></td>
+                                                <td><%=matricula.atendimentos%></td>
+                                                <td><%=matricula.turnoAtendimentos%></td>
+                                                <td><%=matricula.informacoes%></td>
+                                                <td><%=matricula.necessitaraCuidador%></td>
                                                 <td>
                                                     <a href="/deletaraluno/<%=matricula._id%>">Deletar</a>
                                     

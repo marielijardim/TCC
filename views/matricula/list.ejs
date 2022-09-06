@@ -53,6 +53,8 @@
     }
     </style>
 
+    
+
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
@@ -107,10 +109,12 @@
                         <li class="nav-item hidden-xs-down search-box"> <a
                                 class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i
                                     class="fa fa-search"></i></a>
-                            <form class="app-search">
-                                <input type="text" class="form-control" placeholder="Pesquisar"> <a
+                            <form  method="post" class="app-search">
+                                <div>
+                                <input type="text" class="form-control" name="txtPesquisa" placeholder="Pesquisar"> <a
                                     class="srh-btn"><i class="fa fa-times"></i></a></form>
                         </li>
+                    </div>
                     </ul>
                     <!-- ============================================================== -->
                     <!-- User profile and search -->
@@ -199,9 +203,9 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>ID</th>
                                                 <th>Nome</th>
                                                 <th>Especificidade</th>
+                                                <th>Telefone</th>
                                                 <th>Deletar</th>
                                                 <th>Editar</th>
                                             </tr>
@@ -209,9 +213,10 @@
                                         <tbody>
                                             <%for(matricula of Matriculas){%>
                                             <tr>
-                                                <td><%=matricula._id%></td>
                                                 <td><%=matricula.nome%></td>
                                                 <td><%=matricula.especificidade%></td>
+                                                <td><%=matricula.telefones%></td>
+
                                                 <td>
                                                     <a href="/deletaraluno/<%=matricula._id%>">Deletar</a>
                                     
@@ -219,6 +224,8 @@
                                                 <td>
                                                     <a href="/editaraluno/<%=matricula._id%>">Editar</a>
                                                 </td>
+
+                                               
                                             </tr>
                                             <% } %>
                                         </tbody>

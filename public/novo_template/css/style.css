@@ -2322,17 +2322,19 @@ Buttons
 }
 
 .btn-info,
-.btn-info.disabled {
+.btn-info {
   background: #20aee3;
   border: 1px solid #20aee3;
   /*box-shadow: $info-shadow;*/
   transition: 0.2s ease-in;
+  color: #000000;
 }
 .btn-info:hover,
 .btn-info.disabled:hover {
   background: #20aee3;
   border: 1px solid #20aee3;
   /*box-shadow: $info-shadow-hover;*/
+  color: white;
 }
 .btn-info.active, .btn-info:active, .btn-info:focus,
 .btn-info.disabled.active,
@@ -2346,7 +2348,7 @@ Buttons
 .btn-warning,
 .btn-warning.disabled {
   background: #20aee3;
-  color: #ffffff;
+  color: #000000;
   /*box-shadow: $warning-shadow;*/
   border: 1px solid #20aee3;
   transition: 0.2s ease-in;
@@ -2369,11 +2371,12 @@ Buttons
 }
 
 .btn-danger,
-.btn-danger.disabled {
+.btn-danger {
   background: #20aee3;
   border: 1px solid  #20aee3;
   /*box-shadow: $danger-shadow;*/
   transition: 0.2s ease-in;
+  color: #000000;
 }
 .btn-danger:hover,
 .btn-danger.disabled:hover {

@@ -50,6 +50,8 @@ app.get('/login',function(req,res){
     res.render('index.ejs')
 })
 
+
+
 //rota que abre a tela de adicionar aluno
 app.get('/adicionarmatricula',function(req,res){
     Escola.find({}).exec(function(err,docs){
@@ -69,8 +71,6 @@ app.post('/adicionarmatricula',function(req,res){
         endereco: req.body.txtEndereco,
         zona: req.body.txtZona,
         telefones: req.body.txtTelefone,
-        situacao: req.body.txtSituacao,
-        escolasPreferencia: req.body.txtEscolas,
         turnoPreferencia: req.body.txtTurno,
         atendimentosClinicos: req.body.txtAtendimentos,
         turnosAtendimentos: req.body.txtTurnos,
@@ -92,6 +92,15 @@ app.post('/adicionarmatricula',function(req,res){
 //rota que abre a tela de listar todas as matriculas
 app.get('/listaraluno',function(req,res){
     Matricula.find({}).exec(function(err,docs){
+        //buscar todas as matriculas que existem
+        res.render('matricula/list.ejs',{Matriculas:docs})
+    
+    
+}) })
+
+//rota que abre a tela de listar todas as matriculas
+app.post('/listaraluno',function(req,res){
+    Matricula.find({nome: new RegExp(req.body.txtPesquisa,'g')}).exec(function(err,docs){
         //buscar todas as matriculas que existem
         res.render('matricula/list.ejs',{Matriculas:docs})
     
@@ -143,8 +152,6 @@ app.post('/editaraluno/:id',function(req,res){
         endereco: req.body.txtEndereco,
         zona: req.body.txtZona,
         telefones: req.body.txtTelefone,
-        situacao: req.body.txtSituacao,
-        escolasPreferencia: req.body.txtEscolas,
         turnoPreferencia: req.body.txtTurno,
         atendimentosClinicos: req.body.txtAtendimentos,
         turnosAtendimentos: req.body.txtTurnos,
@@ -196,6 +203,14 @@ app.post('/adicionarescolas',upload.single("txtFoto"),function(req,res){
 //rota que abre a tela de listar todas as escolas
 app.get('/listarescolas',function(req,res){
     Escola.find({}).exec(function(err,docs){
+        //buscar todas as escolas que existem
+        res.render('escola/add.ejs',{Escolas:docs})
+    
+    
+}) })
+
+app.post('/listarescolas',function(req,res){
+    Escola.find({nome: new RegExp(req.body.txtPesquisa,'g')}).exec(function(err,docs){
         //buscar todas as escolas que existem
         res.render('escola/add.ejs',{Escolas:docs})
     
@@ -258,6 +273,9 @@ app.get('/listaralunos/:id',function(req,res){
         res.render('matricula/list.ejs',{Matriculas:docs})   
     })
 })
+
+
+
 
 app.listen(3000,function(){
     console.log("Conexão inicializada")
